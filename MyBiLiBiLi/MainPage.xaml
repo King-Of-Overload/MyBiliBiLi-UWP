@@ -7,7 +7,65 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="{ThemeResource background}">
+        <!--@start 整体分三行 title content bottomButton-->
+        <Grid x:Name="grid_frame" BorderBrush="{ThemeResource ForeColor}" BorderThickness="0 0 1 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto" x:Name="row_bottom"/>
+            </Grid.RowDefinitions>
+            <!--@start 顶部标题工具栏定义-->
+            <Grid x:Name="grid_top" Background="{ThemeResource ForeColor}">
+                <!--@start 列定义-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <!--@end 列定义-->
+                <!--@start 左侧汉堡菜单按钮-->
+                <AppBarToggleButton x:Name="btn_toogle_menu" Style="{StaticResource ToogleMenuButton}" Width="48" Height="48" Foreground="White">
+                    <AppBarToggleButton.Icon>
+                        <FontIcon FontFamily="ms-appx:///Assets/font/iconfont.ttf#iconfont" Glyph="&#xe649;"/>
+                    </AppBarToggleButton.Icon>
+                </AppBarToggleButton>
+                <!--@end 左侧汉堡菜单按钮-->
+                <!--@start 圆形用户头像-->
+                <Button Background="{ThemeResource transparent}" Padding="0" Grid.Column="1">
+                    <Ellipse Width="38" Height="38">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="ms-appx:///Images/avatar/xiaoyuan.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Button>
+                <!--@end 圆形用户头像-->
+                <!--@start 搜索框-->
+                <AutoSuggestBox Grid.Column="2" x:Name="autoSuggest_box_mainPage" BorderBrush="#00808080" 
+                                BorderThickness="1" Margin="5 0" PlaceholderText="搜索" 
+                                QueryIcon="Find" HorizontalAlignment="Left"
+                                Style="{ThemeResource AutoSuggestBoxStyle}"
+                                  VerticalAlignment="Center" MinWidth="100"/>
+                <!--@end 搜索框-->
+                <!--@start 按钮定义-->
+                <Button x:Name="btn_download" Grid.Column="3" Width="48" Height="48" Background="{ThemeResource transparent}" Foreground="White">
+                    <FontIcon FontFamily="ms-appx:///Assets/font/iconfont.ttf#iconfont" Glyph="&#xe610;" FontSize="20" />
+                </Button>
+                <Button x:Name="btn_game" Grid.Column="4" Width="48" Height="48" Background="{ThemeResource transparent}" Foreground="White">
+                    <Image Source="ms-appx:///Images/ic_game_detail_gift.png"/>
+                </Button>
+                
+                <!--@end 按钮定义-->
+            </Grid>
+            <!--@end 顶部标题工具栏定义-->
+        </Grid>
+        <!--@end 整体分三行 title content bottomButton-->
+        <!--
+        
+        -->
     </Grid>
 </Page>

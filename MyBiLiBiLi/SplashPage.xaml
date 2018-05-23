@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="MyBiLiBiLi.SplashPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyBiLiBiLi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <!--@start 中间图片区域-->
+        <Grid Background="{ThemeResource background}">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="splash_img" Source="ms-appx:///Images/Splash/ic_splash_default.png" MaxWidth="300"/>
+            </StackPanel>
+            <!--@start 底部信息区域-->
+            <StackPanel VerticalAlignment="Bottom" Margin="0 30 0 5">
+                <Image Source="ms-appx:///Assets/logo/ic_bili_logo.png" Stretch="None" Margin="0 0 0 15"/>
+                <TextBlock Text="Copyright @ 2017-2018 Salu" HorizontalAlignment="Center" Foreground="{ThemeResource font_gray}"/>
+            </StackPanel>
+            <!--@end 底部信息区域-->
+        </Grid>
+        <!--@end 中间图片区域--> 
+    </Grid>
+    
+</Page>
